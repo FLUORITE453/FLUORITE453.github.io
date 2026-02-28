@@ -3,45 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUORITE453 Official Site</title>
+<title>FLUORITE453 Official Website</title>
+
 <style>
-body{margin:0;font-family:sans-serif;background:black;color:white;text-align:center;overflow-x:hidden;}
-header{padding:20px;background:#111;font-size:24px;font-weight:bold;}
-.hero{padding:80px 20px;}
-button{padding:12px 20px;margin:10px;border:none;border-radius:10px;background:#7c3aed;color:white;font-size:16px;cursor:pointer;transition:.3s;}
-button:hover{background:#a855f7;transform:scale(1.05);}
-.section{padding:60px 20px;}
-iframe{border-radius:15px;border:none;max-width:90%;}
-footer{padding:20px;color:gray;}
+body{
+margin:0;
+background:black;
+color:white;
+font-family:sans-serif;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* 背景ネオン */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#6d28d9,#2563eb,#ec4899);
+filter:blur(120px);
+opacity:.3;
+animation:move 10s infinite alternate;
+z-index:-1;
+}
+
+@keyframes move{
+0%{transform:translate(-20px,-20px);}
+100%{transform:translate(20px,20px);}
+}
+
+/* ヘッダー */
+header{
+padding:20px;
+background:#111;
+font-size:26px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+/* ヒーロー */
+.hero{
+padding:100px 20px;
+}
+
+h1{
+font-size:42px;
+text-shadow:0 0 20px #a855f7;
+}
+
+/* ボタン */
+button{
+padding:14px 24px;
+margin:10px;
+border:none;
+border-radius:12px;
+background:#7c3aed;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 15px #7c3aed;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#a855f7;
+}
+
+/* セクション */
+.section{
+padding:70px 20px;
+}
+
+iframe{
+border:none;
+border-radius:20px;
+max-width:90%;
+}
+
+/* フッター */
+footer{
+padding:30px;
+color:gray;
+}
 </style>
 </head>
+
 <body>
 
-<header>🔥 FLUORITE453 OFFICIAL 🔥</header>
+<div class="bg"></div>
+
+<header>⚡ FLUORITE453 GOD MODE ⚡</header>
 
 <div class="hero">
-<h1>Welcome to FLUORITE453</h1>
+<h1>Welcome Creator</h1>
 <p>YouTuber / Quora / Instagram / Twitch / Scratch</p>
 
-<a href="https://www.youtube.com/@FLUORITE453" target="_blank"><button>YouTube Channel</button></a>
-<a href="https://jp.quora.com/profile/FLUORITE453" target="_blank"><button>Quora</button></a>
-<a href="https://www.instagram.com/fluorite453/" target="_blank"><button>Instagram</button></a>
-<a href="https://www.twitch.tv/FLUORITE453" target="_blank"><button>Twitch</button></a>
-<a href="https://scratch.mit.edu/users/FLUORITE453/" target="_blank"><button>Scratch</button></a>
+<a href="https://www.youtube.com/@FLUORITE453" target="_blank">
+<button>🎬 YouTube</button>
+</a>
+
+<a href="https://jp.quora.com/profile/FLUORITE453">
+<button>🧠 Quora</button>
+</a>
+
+<a href="https://www.instagram.com/fluorite453/">
+<button>📸 Instagram</button>
+</a>
+
+<a href="https://scratch.mit.edu/users/FLUORITE453/">
+<button>🎮 Scratch</button>
+</a>
 </div>
 
 <div class="section">
-<h2>Latest YouTube Video</h2>
+<h2>🔥 Latest Video</h2>
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed?listType=user_uploads&list=FLUORITE453"
 allowfullscreen></iframe>
 </div>
 
 <div class="section">
-<h2>Scratch Works</h2>
-<iframe src="https://scratch.mit.edu/users/FLUORITE453/embed" width="80%" height="400"></iframe>
+<h2>🎮 Scratch Works</h2>
+<iframe src="https://scratch.mit.edu/users/FLUORITE453/embed"
+width="80%" height="400"></iframe>
 </div>
 
-<footer>© 2026 FLUORITE453</footer>
+<footer>
+© 2026 FLUORITE453 | Official Website
+</footer>
+
 </body>
 </html>
