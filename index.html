@@ -3,105 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About FLUORITE</title>
+<title>FLUORITE453 Official Site</title>
 <style>
-body{
-  margin:0;
-  font-family:sans-serif;
-  background:black;
-  color:white;
-  text-align:center;
-  overflow-x:hidden;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background:
-  radial-gradient(circle,#ff0088 0%,transparent 40%),
-  radial-gradient(circle,#ff66cc 0%,transparent 40%);
-  animation:bg 12s infinite alternate;
-  z-index:-1;
-}
-
-@keyframes bg{
-  from{transform:translate(-10%,-10%)}
-  to{transform:translate(10%,10%)}
-}
-
-.container{
-  padding:60px 20px;
-}
-
-h1{
-  font-size:3em;
-  color:#ff66cc;
-  text-shadow:0 0 20px #ff0088;
-}
-
-.card{
-  max-width:700px;
-  margin:30px auto;
-  padding:30px;
-  border:2px solid #ff0088;
-  border-radius:20px;
-  background:rgba(0,0,0,0.6);
-  box-shadow:0 0 30px #ff0088;
-}
-
-a.button{
-  display:inline-block;
-  margin-top:30px;
-  padding:12px 24px;
-  border-radius:30px;
-  border:2px solid #ff0088;
-  color:white;
-  text-decoration:none;
-  transition:.3s;
-}
-
-a.button:hover{
-  background:#ff0088;
-  box-shadow:0 0 20px #ff0088;
-}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;overflow-x:hidden}
+  a{color:#ff4da6;text-decoration:none}
+  header{position:sticky;top:0;background:#0a0a0a;padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;z-index:10}
+  nav a{margin:0 10px}
+  section{padding:60px 20px;max-width:900px;margin:auto}
+  h1,h2,h3{text-align:center}
+  .btn{display:inline-block;padding:12px 20px;border-radius:10px;background:#ff4da6;color:#fff;margin:6px}
+  .card{background:#111;border:1px solid #ff4da6;border-radius:16px;padding:20px;margin:10px 0}
+  footer{text-align:center;padding:30px;color:#aaa}
+  /* pink particles */
+  .bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+  .dot{position:absolute;width:4px;height:4px;background:#ff4da6;border-radius:50%;animation:float 8s linear infinite}
+  @keyframes float{0%{transform:translateY(0);opacity:.2}50%{opacity:1}100%{transform:translateY(-100vh);opacity:.2}}
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>ABOUT FLUORITE</h1>
+<div class="bg" id="bg"></div>
+<header>
+  <strong>FLUORITE453</strong>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#links">Links</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="card">
-    <h2>👤 Profile</h2>
-    <p>
-      Name : FLUORITE453<br>
-      Activity : YouTuber / Creator / Q&A Contributor<br>
-      Platforms : YouTube / Quora / Instagram / Twitch / Scratch
-    </p>
+<section id="home">
+  <h1>FLUORITE453 Official Site</h1>
+  <p style="text-align:center">YouTuber / Creator / Streamer</p>
+  <div style="text-align:center">
+    <a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube</a>
   </div>
+</section>
 
+<section id="about">
+  <h2>自己紹介</h2>
   <div class="card">
-    <h2>🎮 Activities</h2>
-    <p>
-      ・YouTubeで動画投稿<br>
-      ・Quoraで質問回答
-      <br>・SNSで発信活動
-      <br>・Scratchで作品制作
-    </p>
+    <p>FLUORITE453 は YouTube を中心に活動しているクリエイターです。ゲーム・エンタメ動画投稿、Twitch配信、Quora回答、Instagram投稿、Scratch作品公開、プリ小説執筆など幅広く活動しています。</p>
   </div>
-  
-  <a href="about.html">そこら辺にいる高校生が有名になるのを夢に走りづつける物語。</a>
+</section>
 
-  <div class="card">
-    <h2>✨ Message</h2>
-    <p>
-      Welcome to my official website.<br>
-      Follow my activities and enjoy the content!
-    </p>
+<section id="links">
+  <h2>Follow Me</h2>
+  <div style="text-align:center">
+    <a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube</a>
+    <a class="btn" href="https://jp.quora.com/profile/FLUORITE453" target="_blank">Quora</a>
+    <a class="btn" href="https://www.instagram.com/fluorite453/" target="_blank">Instagram</a>
+    <a class="btn" href="https://scratch.mit.edu/users/FLUORITE453/" target="_blank">Scratch</a>
+    <a class="btn" href="https://marshmallow-qa.com/k36ki5d2nkkqa1b" target="_blank">マシュマロ</a>
+    <a class="btn" href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2" target="_blank">プリ小説</a>
   </div>
+</section>
 
-  <a class="button" href="index.html">⬅ Back to Home</a>
-</div>
+<section>
+  <h2>訪問者</h2>
+  <div style="text-align:center">
+    <span id="busuanzi_container_site_pv">👀 <span id="busuanzi_value_site_pv"></span> views</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center">fluorite453@gmail.com</p>
+</section>
+
+<footer>
+  © 2026 FLUORITE453
+</footer>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+  const bg=document.getElementById('bg');
+  for(let i=0;i<40;i++){
+    const d=document.createElement('div');
+    d.className='dot';
+    d.style.left=Math.random()*100+'%';
+    d.style.top=Math.random()*100+'%';
+    d.style.animationDuration=(6+Math.random()*6)+'s';
+    bg.appendChild(d);
+  }
+</script>
 </body>
 </html>
