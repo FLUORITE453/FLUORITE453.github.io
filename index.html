@@ -3,139 +3,145 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUORITE453 Official Website</title>
+<title>FLUORITE Official</title>
 
 <style>
-body{
-margin:0;
-background:black;
-color:white;
-font-family:sans-serif;
-text-align:center;
-overflow-x:hidden;
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  color:white;
+  text-align:center;
+  background:black;
+  overflow:hidden;
 }
 
-/* 背景ネオン */
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(45deg,#6d28d9,#2563eb,#ec4899);
-filter:blur(120px);
-opacity:.3;
-animation:move 10s infinite alternate;
-z-index:-1;
+/* ===== 背景グラデーション ===== */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:
+    radial-gradient(circle,#ff0088 0%,transparent 40%),
+    radial-gradient(circle,#ff66cc 0%,transparent 40%);
+  animation:bgmove 10s infinite alternate;
+  z-index:-2;
 }
 
-@keyframes move{
-0%{transform:translate(-20px,-20px);}
-100%{transform:translate(20px,20px);}
+@keyframes bgmove{
+  from{transform:translate(-10%,-10%)}
+  to{transform:translate(10%,10%)}
 }
 
-/* ヘッダー */
-header{
-padding:20px;
-background:#111;
-font-size:26px;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-/* ヒーロー */
-.hero{
-padding:100px 20px;
-}
-
+/* ===== ネオン文字 ===== */
 h1{
-font-size:42px;
-text-shadow:0 0 20px #a855f7;
+  font-size:3em;
+  margin-top:80px;
+  color:#ff66cc;
+  text-shadow:
+  0 0 10px #ff0088,
+  0 0 20px #ff0088,
+  0 0 40px #ff0088;
 }
 
-/* ボタン */
-button{
-padding:14px 24px;
-margin:10px;
-border:none;
-border-radius:12px;
-background:#7c3aed;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 0 15px #7c3aed;
+/* ===== ボタン ===== */
+a.button{
+  display:block;
+  width:260px;
+  margin:20px auto;
+  padding:15px;
+  text-decoration:none;
+  color:white;
+  border:2px solid #ff0088;
+  border-radius:30px;
+  transition:0.3s;
 }
 
-button:hover{
-transform:scale(1.1);
-background:#a855f7;
+a.button:hover{
+  background:#ff0088;
+  box-shadow:0 0 20px #ff0088;
 }
 
-/* セクション */
-.section{
-padding:70px 20px;
+/* ===== カウンター ===== */
+.counter{
+  margin-top:40px;
+  font-size:18px;
 }
 
-iframe{
-border:none;
-border-radius:20px;
-max-width:90%;
+/* ===== ハート ===== */
+.heart{
+  position:fixed;
+  color:#ff66cc;
+  animation:fall linear forwards;
 }
 
-/* フッター */
-footer{
-padding:30px;
-color:gray;
+@keyframes fall{
+  to{
+    transform:translateY(100vh);
+    opacity:0;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<h1>FLUORITE</h1>
 
-<header>⚡ FLUORITE453 GOD MODE ⚡</header>
-
-<div class="hero">
-<h1>Welcome Creator</h1>
-<p>YouTuber / Quora / Instagram / Twitch / Scratch</p>
-
-<a href="https://www.youtube.com/@FLUORITE453" target="_blank">
-<button>🎬 YouTube</button>
+<a class="button"
+href="https://marshmallow-qa.com/k36ki5d2nkkqa1b"
+target="_blank">
+💌 マシュマロ
 </a>
 
-<a href="https://jp.quora.com/profile/FLUORITE453">
-<button>🧠 Quora</button>
+<a class="button"
+href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2"
+target="_blank">
+📖 プリ小説
 </a>
 
-<a href="https://www.instagram.com/fluorite453/">
-<button>📸 Instagram</button>
-</a>
-
-<a href="https://scratch.mit.edu/users/FLUORITE453/">
-<button>🎮 Scratch</button>
-</a>
+<div class="counter">
+👀 Visitors:
+<img src="https://hitwebcounter.com/counter/counter.php?page=12345678&style=0006&nbdigits=6&type=page&initCount=0"/>
 </div>
 
-<div class="section">
-<h2>🔥 Latest Video</h2>
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed?listType=user_uploads&list=FLUORITE453"
-allowfullscreen></iframe>
-</div>
+<p style="margin-top:40px;">
+Contact : fluorite453@gmail.com
+</p>
 
-<div class="section">
-<h2>🎮 Scratch Works</h2>
-<iframe src="https://scratch.mit.edu/users/FLUORITE453/embed"
-width="80%" height="400"></iframe>
-</div>
+<script>
 
-<footer>
-© 2026 FLUORITE453 | Official Website
-</footer>
-<div class="section">
-  <h2>改善点などはこちらに</h2>
-  <p>Email: <a href="mailto:fluorite453@gmail.com" style="color:#a855f7;">fluorite453@gmail.com</a></p>
-</div>
+/* ===== ハート降らせる ===== */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(10+Math.random()*20)+"px";
+  heart.style.animationDuration=(3+Math.random()*5)+"s";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),8000);
+},300);
+
+/* ===== マウス光 ===== */
+document.addEventListener("mousemove",e=>{
+  const glow=document.createElement("div");
+  glow.style.position="fixed";
+  glow.style.left=e.clientX+"px";
+  glow.style.top=e.clientY+"px";
+  glow.style.width="10px";
+  glow.style.height="10px";
+  glow.style.background="#ff0088";
+  glow.style.borderRadius="50%";
+  glow.style.boxShadow="0 0 20px #ff0088";
+  glow.style.pointerEvents="none";
+  document.body.appendChild(glow);
+
+  setTimeout(()=>glow.remove(),300);
+});
+
+</script>
 
 </body>
 </html>
