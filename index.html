@@ -3,145 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUORITE Official</title>
-
+<title>About FLUORITE</title>
 <style>
-body {
+body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:sans-serif;
+  background:black;
   color:white;
   text-align:center;
-  background:black;
-  overflow:hidden;
+  overflow-x:hidden;
 }
 
-/* ===== 背景グラデーション ===== */
 body::before{
   content:"";
   position:fixed;
   width:200%;
   height:200%;
   background:
-    radial-gradient(circle,#ff0088 0%,transparent 40%),
-    radial-gradient(circle,#ff66cc 0%,transparent 40%);
-  animation:bgmove 10s infinite alternate;
-  z-index:-2;
+  radial-gradient(circle,#ff0088 0%,transparent 40%),
+  radial-gradient(circle,#ff66cc 0%,transparent 40%);
+  animation:bg 12s infinite alternate;
+  z-index:-1;
 }
 
-@keyframes bgmove{
+@keyframes bg{
   from{transform:translate(-10%,-10%)}
   to{transform:translate(10%,10%)}
 }
 
-/* ===== ネオン文字 ===== */
-h1{
-  font-size:3em;
-  margin-top:80px;
-  color:#ff66cc;
-  text-shadow:
-  0 0 10px #ff0088,
-  0 0 20px #ff0088,
-  0 0 40px #ff0088;
+.container{
+  padding:60px 20px;
 }
 
-/* ===== ボタン ===== */
-a.button{
-  display:block;
-  width:260px;
-  margin:20px auto;
-  padding:15px;
-  text-decoration:none;
-  color:white;
+h1{
+  font-size:3em;
+  color:#ff66cc;
+  text-shadow:0 0 20px #ff0088;
+}
+
+.card{
+  max-width:700px;
+  margin:30px auto;
+  padding:30px;
   border:2px solid #ff0088;
+  border-radius:20px;
+  background:rgba(0,0,0,0.6);
+  box-shadow:0 0 30px #ff0088;
+}
+
+a.button{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 24px;
   border-radius:30px;
-  transition:0.3s;
+  border:2px solid #ff0088;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
 }
 
 a.button:hover{
   background:#ff0088;
   box-shadow:0 0 20px #ff0088;
 }
-
-/* ===== カウンター ===== */
-.counter{
-  margin-top:40px;
-  font-size:18px;
-}
-
-/* ===== ハート ===== */
-.heart{
-  position:fixed;
-  color:#ff66cc;
-  animation:fall linear forwards;
-}
-
-@keyframes fall{
-  to{
-    transform:translateY(100vh);
-    opacity:0;
-  }
-}
 </style>
 </head>
-
 <body>
+<div class="container">
+  <h1>ABOUT FLUORITE</h1>
 
-<h1>FLUORITE</h1>
+  <div class="card">
+    <h2>👤 Profile</h2>
+    <p>
+      Name : FLUORITE453<br>
+      Activity : YouTuber / Creator / Q&A Contributor<br>
+      Platforms : YouTube / Quora / Instagram / Twitch / Scratch
+    </p>
+  </div>
 
-<a class="button"
-href="https://marshmallow-qa.com/k36ki5d2nkkqa1b"
-target="_blank">
-💌 マシュマロ
-</a>
+  <div class="card">
+    <h2>🎮 Activities</h2>
+    <p>
+      ・YouTubeで動画投稿<br>
+      ・Quoraで質問回答
+      <br>・SNSで発信活動
+      <br>・Scratchで作品制作
+    </p>
+  </div>
 
-<a class="button"
-href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2"
-target="_blank">
-📖 プリ小説
-</a>
+  <div class="card">
+    <h2>✨ Message</h2>
+    <p>
+      Welcome to my official website.<br>
+      Follow my activities and enjoy the content!
+    </p>
+  </div>
 
-<div class="counter">
-👀 Visitors:
-<img src="https://hitwebcounter.com/counter/counter.php?page=12345678&style=0006&nbdigits=6&type=page&initCount=0"/>
+  <a class="button" href="index.html">⬅ Back to Home</a>
 </div>
-
-<p style="margin-top:40px;">
-Contact : fluorite453@gmail.com
-</p>
-
-<script>
-
-/* ===== ハート降らせる ===== */
-setInterval(()=>{
-  const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤";
-  heart.style.left=Math.random()*100+"vw";
-  heart.style.fontSize=(10+Math.random()*20)+"px";
-  heart.style.animationDuration=(3+Math.random()*5)+"s";
-  document.body.appendChild(heart);
-
-  setTimeout(()=>heart.remove(),8000);
-},300);
-
-/* ===== マウス光 ===== */
-document.addEventListener("mousemove",e=>{
-  const glow=document.createElement("div");
-  glow.style.position="fixed";
-  glow.style.left=e.clientX+"px";
-  glow.style.top=e.clientY+"px";
-  glow.style.width="10px";
-  glow.style.height="10px";
-  glow.style.background="#ff0088";
-  glow.style.borderRadius="50%";
-  glow.style.boxShadow="0 0 20px #ff0088";
-  glow.style.pointerEvents="none";
-  document.body.appendChild(glow);
-
-  setTimeout(()=>glow.remove(),300);
-});
-
-</script>
-
 </body>
 </html>
