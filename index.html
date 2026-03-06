@@ -36,7 +36,7 @@ footer{text-align:center;padding:30px;color:#aaa}
 }
 
 /* cosmic background */
-canvas#stars{position:fixed;inset:0;z-index:-2}
+canvas#stars{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-2}
 
 /* glow */
 .glow{color:#ff4da6;text-shadow:0 0 10px #ff4da6,0 0 20px #ff4da6,0 0 40px #ff0088}
@@ -197,8 +197,11 @@ window.onload=()=>{document.getElementById('loader').style.display='none'}
 /* star background */
 const starCanvas=document.getElementById('stars');
 const sctx=starCanvas.getContext('2d');
-starCanvas.width=window.innerWidth;
-starCanvas.height=window.innerHeight;
+function resizeStars(){
+ starCanvas.width=window.innerWidth;
+ starCanvas.height=window.innerHeight;
+}
+resizeStars()
 let stars=[];
 for(let i=0;i<150;i++){
  stars.push({x:Math.random()*starCanvas.width,y:Math.random()*starCanvas.height,s:Math.random()*2});
