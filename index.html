@@ -24,6 +24,14 @@ h1,h2,h3{text-align:center}
 
 footer{text-align:center;padding:30px;color:#aaa}
 
+.liveBadge{display:inline-block;padding:6px 14px;border-radius:20px;background:red;color:white;font-weight:bold;animation:blink 1s infinite}
+
+@keyframes blink{
+0%{opacity:1}
+50%{opacity:0.2}
+100%{opacity:1}
+}
+
 /* cosmic background */
 canvas#stars{position:fixed;inset:0;z-index:-2}
 
@@ -95,7 +103,10 @@ FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイ�
 
 <section id="videos" class="fade">
 <h2>YouTube Live</h2>
-<p style="text-align:center">ライブ配信しているときだけ表示されます</p>
+<p style="text-align:center">配信中はLIVEが点滅します</p>
+<div style="text-align:center;margin-bottom:10px">
+<span id="liveBadge" class="liveBadge">🔴 LIVE NOW</span>
+</div>
 <div class="video">
 <iframe id="liveFrame" src="https://www.youtube.com/embed/live_stream?channel=UCOjCRa4AA9NktD0jGZpG6Qg" allowfullscreen></iframe>
 </div>
@@ -146,7 +157,9 @@ FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイ�
 
 <section id="contact" class="fade">
 <h2>Contact</h2>
-<p style="text-align:center">fluorite453@gmail.com</p>
+<p style="text-align:center">
+<a class="btn" href="mailto:fluorite453@gmail.com">📧 メールを送る</a>
+</p>
 </section>
 
 <footer>
@@ -178,6 +191,11 @@ function drawStars(){
  requestAnimationFrame(drawStars);
 }
 drawStars();
+
+/* warp effect */
+window.addEventListener('click',()=>{
+ stars.forEach(s=>{s.y+=20})
+});
 
 /* cursor */
 const cursor=document.getElementById('cursor');
@@ -228,11 +246,14 @@ game();
 /* AI */
 function aiReply(msg){
  msg=msg.toLowerCase();
- if(msg.includes('fluorite')) return 'FLUORITE453はYouTubeなどで活動するクリエイターです。';
+ if(msg.includes('fluorite')) return 'FLUORITE453はYouTubeやScratchで活動するクリエイター！';
  if(msg.includes('youtube')) return 'YouTubeはこちら → https://www.youtube.com/@FLUORITE453';
  if(msg.includes('scratch')) return 'Scratch作品はこちら → https://scratch.mit.edu/users/FLUORITE453/';
- if(msg.includes('こんにちは')) return 'こんにちは！サイトAIです！';
- return '面白い質問だね！サイトを見てみて！';
+ if(msg.includes('ゲーム')) return 'このサイトにはミニゲームとScratchゲームがあるよ！';
+ if(msg.includes('ai')) return 'このサイトにはAIチャットが搭載されています！';
+ if(msg.includes('こんにちは')||msg.includes('hello')) return 'こんにちは！FLUORITE453サイトAIです！';
+ if(msg.includes('だれ')) return '私はこのサイトのAIアシスタントです。';
+ return 'なるほど！サイトをいろいろ見てみてね 🚀';
 }
 
 function sendChat(){
