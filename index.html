@@ -3,89 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUORITE453 Official Site</title>
+<title>FLUORITE453 GOD LEGEND SITE</title>
 <style>
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;overflow-x:hidden}
-  a{color:#ff4da6;text-decoration:none}
-  header{position:sticky;top:0;background:#0a0a0a;padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;z-index:10}
-  nav a{margin:0 10px}
-  section{padding:60px 20px;max-width:900px;margin:auto}
-  h1,h2,h3{text-align:center}
-  .btn{display:inline-block;padding:12px 20px;border-radius:10px;background:#ff4da6;color:#fff;margin:6px}
-  .card{background:#111;border:1px solid #ff4da6;border-radius:16px;padding:20px;margin:10px 0}
-  footer{text-align:center;padding:30px;color:#aaa}
-  /* pink particles */
-  .bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
-  .dot{position:absolute;width:4px;height:4px;background:#ff4da6;border-radius:50%;animation:float 8s linear infinite}
-  @keyframes float{0%{transform:translateY(0);opacity:.2}50%{opacity:1}100%{transform:translateY(-100vh);opacity:.2}}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;overflow-x:hidden}
+a{color:#ff4da6;text-decoration:none}
+header{position:sticky;top:0;background:#0a0a0a;padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;z-index:10}
+nav a{margin:0 10px;font-weight:bold}
+section{padding:80px 20px;max-width:1100px;margin:auto}
+h1,h2,h3{text-align:center}
+
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;background:#ff4da6;color:#fff;margin:6px;box-shadow:0 0 15px #ff4da6;transition:.2s}
+.btn:hover{transform:scale(1.08)}
+
+.card{background:#111;border:1px solid #ff4da6;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 0 20px rgba(255,77,166,.4)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+
+.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px}
+.video iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+footer{text-align:center;padding:30px;color:#aaa}
+
+/* background particles */
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.dot{position:absolute;width:4px;height:4px;background:#ff4da6;border-radius:50%;animation:float 12s linear infinite}
+@keyframes float{0%{transform:translateY(0);opacity:.2}50%{opacity:1}100%{transform:translateY(-100vh);opacity:.2}}
+
+/* glow */
+.glow{color:#ff4da6;text-shadow:0 0 10px #ff4da6,0 0 20px #ff4da6,0 0 40px #ff0088}
+
+/* fade scroll */
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+/* neon cursor */
+.cursor{position:fixed;width:12px;height:12px;border-radius:50%;background:#ff4da6;pointer-events:none;box-shadow:0 0 20px #ff4da6,0 0 40px #ff4da6;z-index:100}
+
+/* loading screen */
+#loader{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999}
+#loader h1{color:#ff4da6;text-shadow:0 0 20px #ff4da6}
+
+canvas{background:#111;border-radius:12px;display:block;margin:auto}
 </style>
 </head>
 <body>
+
+<div id="loader"><h1>LOADING...</h1></div>
 <div class="bg" id="bg"></div>
+<div class="cursor" id="cursor"></div>
+
 <header>
-  <strong>FLUORITE453</strong>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#links">Links</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<strong class="glow">FLUORITE453</strong>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">Profile</a>
+<a href="#videos">Videos</a>
+<a href="#scratch">Scratch</a>
+<a href="#live">Live</a>
+<a href="#game">Mini Game</a>
+<a href="#links">Links</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<section id="home">
-  <h1>FLUORITE453 Official Site</h1>
-  <p style="text-align:center">YouTuber / Creator / Streamer</p>
-  <div style="text-align:center">
-    <a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube</a>
-  </div>
+<section id="home" class="fade">
+<h1 class="glow">FLUORITE453 Official Site</h1>
+<p style="text-align:center">YouTuber / Creator / Streamer</p>
+<div style="text-align:center">
+<a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube</a>
+</div>
 </section>
 
-<section id="about">
-  <h2>自己紹介</h2>
-  <div class="card">
-    <p>FLUORITE453 は YouTube を中心に活動しているクリエイターです。ゲーム・エンタメ動画投稿、Twitch配信、Quora回答、Instagram投稿、Scratch作品公開、プリ小説執筆など幅広く活動しています。</p>
-  </div>
+<section id="about" class="fade">
+<h2>プロフィール</h2>
+<div class="card" style="text-align:center">
+<img src="https://yt3.googleusercontent.com/8P0K_9Njpe0h40FuHdDrpSi9iIUg3OheWUvwRtz4dQVCWRgm-qAdt97dBMySXlNg_AfxLSkL=s160-c-k-c0x00ffffff-no-rj" style="width:160px;border-radius:50%;border:3px solid #ff4da6;box-shadow:0 0 20px #ff4da6">
+<h3 class="glow">FLUORITE453</h3>
+<p>YouTube / Twitch / Scratch / SNSで活動しているクリエイター。</p>
+</div>
 </section>
 
-<section id="links">
-  <h2>Follow Me</h2>
-  <div style="text-align:center">
-    <a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube</a>
-    <a class="btn" href="https://jp.quora.com/profile/FLUORITE453" target="_blank">Quora</a>
-    <a class="btn" href="https://www.instagram.com/fluorite453/" target="_blank">Instagram</a>
-    <a class="btn" href="https://scratch.mit.edu/users/FLUORITE453/" target="_blank">Scratch</a>
-    <a class="btn" href="https://marshmallow-qa.com/k36ki5d2nkkqa1b" target="_blank">マシュマロ</a>
-    <a class="btn" href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2" target="_blank">プリ小説</a>
-  </div>
+<section id="videos" class="fade">
+<h2>YouTube Videos</h2>
+<div class="grid">
+<div class="video"><iframe src="https://www.youtube.com/embed?listType=user_uploads&list=FLUORITE453"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed?listType=user_uploads&list=FLUORITE453"></iframe></div>
+<div class="video"><iframe src="https://www.youtube.com/embed?listType=user_uploads&list=FLUORITE453"></iframe></div>
+</div>
 </section>
 
-<section>
-  <h2>訪問者</h2>
-  <div style="text-align:center">
-    <span id="busuanzi_container_site_pv">👀 <span id="busuanzi_value_site_pv"></span> views</span>
-  </div>
+<section id="scratch" class="fade">
+<h2>Scratch Game</h2>
+<div class="video">
+<iframe src="https://scratch.mit.edu/projects/10128407/embed"></iframe>
+</div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p style="text-align:center">fluorite453@gmail.com</p>
+<section id="live" class="fade">
+<h2>Twitch Live</h2>
+<div class="video">
+<iframe src="https://player.twitch.tv/?channel=fluorite453&parent=fluorite453.github.io"></iframe>
+</div>
+</section>
+
+<section id="game" class="fade">
+<h2>Mini Game</h2>
+<canvas id="gameCanvas" width="400" height="300"></canvas>
+<p style="text-align:center">赤い四角をよけろ！</p>
+</section>
+
+<section id="links" class="fade">
+<h2>Follow Me</h2>
+<div style="text-align:center">
+<a class="btn" href="https://www.youtube.com/@FLUORITE453">YouTube</a>
+<a class="btn" href="https://jp.quora.com/profile/FLUORITE453">Quora</a>
+<a class="btn" href="https://www.instagram.com/fluorite453/">Instagram</a>
+<a class="btn" href="https://scratch.mit.edu/users/FLUORITE453/">Scratch</a>
+<a class="btn" href="https://marshmallow-qa.com/k36ki5d2nkkqa1b">マシュマロ</a>
+<a class="btn" href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2">プリ小説</a>
+</div>
+</section>
+
+<section class="fade">
+<h2>Visitors</h2>
+<div style="text-align:center">
+<span id="busuanzi_container_site_pv">👀 <span id="busuanzi_value_site_pv"></span> views</span>
+</div>
+</section>
+
+<section id="contact" class="fade">
+<h2>Contact</h2>
+<p style="text-align:center">fluorite453@gmail.com</p>
 </section>
 
 <footer>
-  © 2026 FLUORITE453
+© 2026 FLUORITE453
 </footer>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 <script>
-  const bg=document.getElementById('bg');
-  for(let i=0;i<40;i++){
-    const d=document.createElement('div');
-    d.className='dot';
-    d.style.left=Math.random()*100+'%';
-    d.style.top=Math.random()*100+'%';
-    d.style.animationDuration=(6+Math.random()*6)+'s';
-    bg.appendChild(d);
-  }
+/* loader */
+window.onload=()=>{document.getElementById('loader').style.display='none'}
+
+/* particles */
+const bg=document.getElementById('bg');
+for(let i=0;i<100;i++){
+ const d=document.createElement('div');
+ d.className='dot';
+ d.style.left=Math.random()*100+'%';
+ d.style.top=Math.random()*100+'%';
+ d.style.animationDuration=(6+Math.random()*8)+'s';
+ bg.appendChild(d);
+}
+
+/* cursor */
+const cursor=document.getElementById('cursor');
+document.addEventListener('mousemove',e=>{
+ cursor.style.left=e.clientX+'px';
+ cursor.style.top=e.clientY+'px';
+});
+
+/* scroll animation */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show')}})
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+
+/* mini game */
+const canvas=document.getElementById('gameCanvas');
+const ctx=canvas.getContext('2d');
+let player={x:180,y:250,size:20};
+let enemy={x:Math.random()*380,y:0,size:20};
+let score=0;
+
+document.addEventListener('mousemove',e=>{
+ const rect=canvas.getBoundingClientRect();
+ player.x=e.clientX-rect.left-player.size/2;
+});
+
+function game(){
+ ctx.clearRect(0,0,400,300);
+
+ ctx.fillStyle="#ff4da6";
+ ctx.fillRect(player.x,player.y,player.size,player.size);
+
+ ctx.fillStyle="red";
+ ctx.fillRect(enemy.x,enemy.y,enemy.size,enemy.size);
+
+ enemy.y+=3;
+
+ if(enemy.y>300){
+  enemy.y=0;
+  enemy.x=Math.random()*380;
+  score++;
+ }
+
+ if(enemy.y+enemy.size>player.y && enemy.x<player.x+player.size && enemy.x+enemy.size>player.x){
+  alert("Game Over! Score: "+score);
+  enemy.y=0;score=0;
+ }
+
+ ctx.fillStyle="white";
+ ctx.fillText("Score: "+score,10,20);
+
+ requestAnimationFrame(game);
+}
+
+game();
 </script>
+
 </body>
 </html>
