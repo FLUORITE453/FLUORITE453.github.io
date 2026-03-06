@@ -4,64 +4,190 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FLUORITE453 COSMIC CREATOR SITE</title>
+
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff;overflow-x:hidden}
-a{color:#ff4da6;text-decoration:none}
-header{position:sticky;top:0;background:#0a0a0a;padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;z-index:10}
-nav a{margin:0 10px;font-weight:bold}
-section{padding:80px 20px;max-width:1100px;margin:auto}
-h1,h2,h3{text-align:center}
 
-.btn{display:inline-block;padding:12px 20px;border-radius:12px;background:#ff4da6;color:#fff;margin:6px;box-shadow:0 0 15px #ff4da6;transition:.2s}
-.btn:hover{transform:scale(1.08)}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
 
-.card{background:#111;border:1px solid #ff4da6;border-radius:16px;padding:20px;margin:14px 0;box-shadow:0 0 20px rgba(255,77,166,.4)}
+a{
+color:#ff4da6;
+text-decoration:none;
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+header{
+position:sticky;
+top:0;
+background:#0a0a0a;
+padding:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #222;
+z-index:10
+}
 
-.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px}
-.video iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+nav a{
+margin:0 10px;
+font-weight:bold
+}
 
-footer{text-align:center;padding:30px;color:#aaa}
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto
+}
 
-.liveBadge{display:inline-block;padding:6px 14px;border-radius:20px;background:red;color:white;font-weight:bold;animation:blink 1s infinite}
+h1,h2,h3{
+text-align:center
+}
+
+.btn{
+display:inline-block;
+padding:12px 20px;
+border-radius:12px;
+background:#ff4da6;
+color:#fff;
+margin:6px;
+box-shadow:0 0 15px #ff4da6;
+transition:.2s
+}
+
+.btn:hover{
+transform:scale(1.08)
+}
+
+.card{
+background:#111;
+border:1px solid #ff4da6;
+border-radius:16px;
+padding:20px;
+margin:14px 0;
+box-shadow:0 0 20px rgba(255,77,166,.4)
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px
+}
+
+.video{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:14px
+}
+
+.video iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#aaa
+}
+
+.liveBadge{
+display:inline-block;
+padding:6px 14px;
+border-radius:20px;
+background:red;
+color:white;
+font-weight:bold;
+animation:blink 1s infinite
+}
 
 @keyframes blink{
 0%{opacity:1}
 50%{opacity:0.2}
 100%{opacity:1}
 }
-50%{opacity:0.2}
-100%{opacity:1}
-}
 
 /* cosmic background */
-canvas#stars{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-2}
 
-/* glow */
-.glow{color:#ff4da6;text-shadow:0 0 10px #ff4da6,0 0 20px #ff4da6,0 0 40px #ff0088}
+canvas#stars{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+z-index:-2
+}
 
-.fade{opacity:0;transform:translateY(40px);transition:1s}
-.fade.show{opacity:1;transform:translateY(0)}
+.glow{
+color:#ff4da6;
+text-shadow:0 0 10px #ff4da6,0 0 20px #ff4da6,0 0 40px #ff0088
+}
 
-.cursor{position:fixed;width:12px;height:12px;border-radius:50%;background:#ff4da6;pointer-events:none;box-shadow:0 0 20px #ff4da6,0 0 40px #ff4da6;z-index:100}
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s
+}
 
-#loader{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999}
-#loader h1{color:#ff4da6;text-shadow:0 0 20px #ff4da6}
+.fade.show{
+opacity:1;
+transform:translateY(0)
+}
 
-canvas#gameCanvas{background:#111;border-radius:12px;display:block;margin:auto}
+.cursor{
+position:fixed;
+width:12px;
+height:12px;
+border-radius:50%;
+background:#ff4da6;
+pointer-events:none;
+box-shadow:0 0 20px #ff4da6,0 0 40px #ff4da6;
+z-index:100
+}
 
-input{padding:10px;border-radius:8px;border:none;background:#111;color:white}
+#loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999
+}
+
+#loader h1{
+color:#ff4da6;
+text-shadow:0 0 20px #ff4da6
+}
+
+canvas#gameCanvas{
+background:#111;
+border-radius:12px;
+display:block;
+margin:auto
+}
+
 </style>
 </head>
+
 <body>
 
 <div id="loader"><h1>LOADING COSMIC SITE...</h1></div>
+
 <canvas id="stars"></canvas>
 <div class="cursor" id="cursor"></div>
 
 <header>
 <strong class="glow">FLUORITE453</strong>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#about">Profile</a>
@@ -72,226 +198,406 @@ input{padding:10px;border-radius:8px;border:none;background:#111;color:white}
 <a href="#links">Links</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
+
 <section id="home" class="fade">
+
 <h1 class="glow">FLUORITE453 COSMIC CREATOR</h1>
 <p style="text-align:center">YouTuber / Creator / Streamer</p>
 
 <div style="text-align:center;margin-top:10px">
-<img src="https://img.shields.io/youtube/channel/subscribers/UCOjCRa4AA9NktD0jGZpG6Qg?style=for-the-badge&color=ff4da6&label=Subscribers" alt="subscribers">
+
+<img src="https://img.shields.io/youtube/channel/subscribers/UCOjCRa4AA9NktD0jGZpG6Qg?style=for-the-badge&color=ff4da6&label=Subscribers">
+
 </div>
 
 <div style="text-align:center;margin-top:20px">
-<a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">YouTube Channel</a>
+
+<a class="btn" href="https://www.youtube.com/@FLUORITE453" target="_blank">
+YouTube Channel
+</a>
+
 </div>
+
 </section>
+
 
 <section id="about" class="fade">
+
 <h2>プロフィール</h2>
+
 <div class="card" style="text-align:center">
-<img src="https://yt3.googleusercontent.com/8P0K_9Njpe0h40FuHdDrpSi9iIUg3OheWUvwRtz4dQVCWRgm-qAdt97dBMySXlNg_AfxLSkL=s160-c-k-c0x00ffffff-no-rj" style="width:160px;border-radius:50%;border:3px solid #ff4da6;box-shadow:0 0 20px #ff4da6">
+
+<img src="https://yt3.googleusercontent.com/8P0K_9Njpe0h40FuHdDrpSi9iIUg3OheWUvwRtz4dQVCWRgm-qAdt97dBMySXlNg_AfxLSkL=s160-c-k-c0x00ffffff-no-rj"
+style="width:160px;border-radius:50%;border:3px solid #ff4da6;box-shadow:0 0 20px #ff4da6">
+
 <h3 class="glow">FLUORITE453</h3>
-<p>
-FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイターです。<br><br>
-ゲーム制作、動画投稿、配信、そしてWebサイト制作など、
-さまざまなクリエイティブ活動をしています。<br><br>
-このサイトでは、YouTube動画・Scratchゲーム・ミニゲーム・AIチャットなどを
-まとめて楽しむことができます。<br><br>
-宇宙のようなクリエイティブ空間をテーマに、
-「COSMIC CREATOR」として活動中 🚀
-</p>
+
+<p> FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイターです。
+  <br><br> ゲーム制作、動画投稿、配信、そしてWebサイト制作など、 さまざまなクリエイティブ活動をしています。
+  <br><br> このサイトでは、YouTube動画・Scratchゲーム・ミニゲーム・AIチャットなどを まとめて楽しむことができます。
+  <br><br> 宇宙のようなクリエイティブ空間をテーマに、 「COSMIC CREATOR」として活動中 🚀 </p>
+
 </div>
+
 </section>
+
 
 <section id="videos" class="fade">
+
 <h2>YouTube Live</h2>
-<p style="text-align:center">配信中のときだけLIVE表示されます</p>
+
+<p style="text-align:center">
+配信中のときだけLIVE表示
+</p>
+
 <div style="text-align:center;margin-bottom:10px">
-<span id="liveBadge" class="liveBadge" style="display:none">🔴 LIVE NOW</span>
+
+<span id="liveBadge" class="liveBadge" style="display:none">
+🔴 LIVE NOW
+</span>
+
 </div>
+
 <div class="video">
-<iframe id="liveFrame" src="https://www.youtube.com/embed/live_stream?channel=UCOjCRa4AA9NktD0jGZpG6Qg" allowfullscreen></iframe>
+
+<iframe
+src="https://www.youtube.com/embed/live_stream?channel=UCOjCRa4AA9NktD0jGZpG6Qg"
+allowfullscreen>
+</iframe>
+
 </div>
+
 </section>
+
 
 <section id="scratch" class="fade">
+
 <h2>Scratch Games</h2>
+
 <div class="grid">
-<div class="video"><iframe src="https://scratch.mit.edu/projects/1218861579/embed"></iframe></div>
-<div class="video"><iframe src="https://scratch.mit.edu/projects/1190305843/embed"></iframe></div>
-<div class="video"><iframe src="https://scratch.mit.edu/projects/1223980688/embed"></iframe></div>
+
+<div class="video">
+<iframe src="https://scratch.mit.edu/projects/1218861579/embed"></iframe>
 </div>
+
+<div class="video">
+<iframe src="https://scratch.mit.edu/projects/1190305843/embed"></iframe>
+</div>
+
+<div class="video">
+<iframe src="https://scratch.mit.edu/projects/1223980688/embed"></iframe>
+</div>
+
+</div>
+
 </section>
+
 
 <section id="game" class="fade">
+
 <h2>Mini Game</h2>
+
 <canvas id="gameCanvas" width="400" height="300"></canvas>
-<p style="text-align:center">カーソルを入れるとスタート</p>
+
+<p style="text-align:center">
+カーソルを入れるとスタート
+</p>
+
 </section>
+
 
 <section id="ai" class="fade">
-<h2>Real AI Chat</h2>
-<p style="text-align:center">ブラウザで動く本物のAIチャット</p>
+
+<h2>AI Chat</h2>
+
 <div class="card" style="max-width:900px;margin:auto">
-<iframe src="https://huggingface.co/spaces/huggingchat/chat-ui?embed=true" width="100%" height="500" style="border:none;border-radius:10px"></iframe>
+
+<iframe
+src="https://huggingface.co/spaces/huggingchat/chat-ui?embed=true"
+width="100%"
+height="500"
+style="border:none;border-radius:10px">
+</iframe>
+
 </div>
-<p style="text-align:center;font-size:12px;color:#aaa">※AIは外部サービスを利用しています</p>
+
 </section>
+
 
 <section id="links" class="fade">
+
 <h2>Follow</h2>
+
 <div style="text-align:center">
+
 <a class="btn" href="https://www.youtube.com/@FLUORITE453">YouTube</a>
+
 <a class="btn" href="https://jp.quora.com/profile/FLUORITE453">Quora</a>
+
 <a class="btn" href="https://www.instagram.com/fluorite453/">Instagram</a>
+
 <a class="btn" href="https://scratch.mit.edu/users/FLUORITE453/">Scratch</a>
-<a class="btn" href="https://marshmallow-qa.com/k36ki5d2nkkqa1b" target="_blank">マシュマロ</a>
-<a class="btn" href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2" target="_blank">プリ小説</a>
+
+<a class="btn" href="https://marshmallow-qa.com/k36ki5d2nkkqa1b">マシュマロ</a>
+
+<a class="btn" href="https://novel.prcm.jp/user/F9N9JLj5YvgFuKa6TrPAh7sjOAF2">プリ小説</a>
+
 </div>
+
 </section>
+
 
 <section class="fade">
+
 <h2>Visitors</h2>
+
 <div style="text-align:center">
-<span id="busuanzi_container_site_pv">👀 <span id="busuanzi_value_site_pv"></span> views</span>
+
+<span id="busuanzi_container_site_pv">
+👀 <span id="busuanzi_value_site_pv"></span> views
+</span>
+
 </div>
+
 </section>
+
 
 <section id="contact" class="fade">
+
 <h2>Contact</h2>
+
 <p style="text-align:center">
-<a class="btn" href="mailto:fluorite453@gmail.com">📧 メールを送る</a>
+
+<a class="btn" href="mailto:fluorite453@gmail.com">
+📧 メールを送る
+</a>
+
 </p>
+
 </section>
 
+
 <footer>
+
 © 2026 FLUORITE453
+
 </footer>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-/* check youtube live status */
-async function checkLive(){
- try{
-  const res=await fetch('https://www.youtube.com/feeds/videos.xml?channel_id=UCOjCRa4AA9NktD0jGZpG6Qg');
-  const txt=await res.text();
-  const live=txt.includes('yt:liveBroadcastContent>live<');
-  const badge=document.getElementById('liveBadge');
-  if(live){
-   badge.style.display='inline-block';
-   badge.style.animation='blink 1s infinite';
-  }else{
-   badge.style.display='none';
-  }
- }catch(e){console.log('live check error',e)}
-}
 
-setInterval(checkLive,60000);
-checkLive();
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-</script>
 
 <script>
-window.onload=()=>{document.getElementById('loader').style.display='none'}
+
+/* LIVE CHECK */
+
+async function checkLive(){
+
+try{
+
+const res = await fetch(
+"https://api.allorigins.win/raw?url=https://www.youtube.com/feeds/videos.xml?channel_id=UCOjCRa4AA9NktD0jGZpG6Qg"
+)
+
+const txt = await res.text()
+
+const live = txt.includes("yt:liveBroadcastContent>live<")
+
+const badge = document.getElementById("liveBadge")
+
+if(live){
+
+badge.style.display="inline-block"
+
+}else{
+
+badge.style.display="none"
+
+}
+
+}catch(e){
+
+console.log("Live check error",e)
+
+}
+
+}
+
+checkLive()
+
+setInterval(checkLive,60000)
+
+
+
+/* loader */
+
+window.onload=()=>{
+document.getElementById('loader').style.display='none'
+}
+
+
 
 /* star background */
-const starCanvas=document.getElementById('stars');
-const sctx=starCanvas.getContext('2d');
+
+const starCanvas=document.getElementById('stars')
+const sctx=starCanvas.getContext('2d')
+
 function resizeStars(){
- starCanvas.width=window.innerWidth;
- starCanvas.height=window.innerHeight;
+
+starCanvas.width=window.innerWidth
+starCanvas.height=window.innerHeight
+
 }
+
 resizeStars()
-let stars=[];
+
+window.addEventListener("resize",resizeStars)
+
+let stars=[]
+
 for(let i=0;i<150;i++){
- stars.push({x:Math.random()*starCanvas.width,y:Math.random()*starCanvas.height,s:Math.random()*2});
+
+stars.push({
+
+x:Math.random()*starCanvas.width,
+y:Math.random()*starCanvas.height,
+s:Math.random()*2
+
+})
+
 }
+
 function drawStars(){
- sctx.clearRect(0,0,starCanvas.width,starCanvas.height);
- sctx.fillStyle='white';
- stars.forEach(star=>{
-  sctx.fillRect(star.x,star.y,star.s,star.s);
-  star.y+=0.2;
-  if(star.y>starCanvas.height) star.y=0;
- });
- requestAnimationFrame(drawStars);
+
+sctx.clearRect(0,0,starCanvas.width,starCanvas.height)
+
+sctx.fillStyle='white'
+
+stars.forEach(star=>{
+
+sctx.fillRect(star.x,star.y,star.s,star.s)
+
+star.y+=0.2
+
+if(star.y>starCanvas.height) star.y=0
+
+})
+
+requestAnimationFrame(drawStars)
+
 }
-drawStars();
+
+drawStars()
+
+
 
 /* warp effect */
+
 window.addEventListener('click',()=>{
- stars.forEach(s=>{s.y+=20})
-});
+stars.forEach(s=>{s.y+=20})
+})
+
+
 
 /* cursor */
-const cursor=document.getElementById('cursor');
+
+const cursor=document.getElementById('cursor')
+
 document.addEventListener('mousemove',e=>{
- cursor.style.left=e.clientX+'px';
- cursor.style.top=e.clientY+'px';
-});
+
+cursor.style.left=e.clientX+'px'
+cursor.style.top=e.clientY+'px'
+
+})
+
+
 
 /* scroll animation */
+
 const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show')}})
-});
-document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.classList.add('show')
+}
+})
+
+})
+
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el))
+
+
 
 /* mini game */
-const canvas=document.getElementById('gameCanvas');
-const ctx=canvas.getContext('2d');
-let player={x:180,y:250,size:20};
-let enemy={x:Math.random()*380,y:0,size:20};
-let score=0;
-let running=false;
 
-canvas.addEventListener('mouseenter',()=>running=true);
-canvas.addEventListener('mouseleave',()=>running=false);
+const canvas=document.getElementById('gameCanvas')
+
+const ctx=canvas.getContext('2d')
+
+let player={x:180,y:250,size:20}
+
+let enemy={x:Math.random()*380,y:0,size:20}
+
+let score=0
+
+let running=false
+
+canvas.addEventListener('mouseenter',()=>running=true)
+canvas.addEventListener('mouseleave',()=>running=false)
 
 canvas.addEventListener('mousemove',e=>{
- const rect=canvas.getBoundingClientRect();
- player.x=e.clientX-rect.left-player.size/2;
-});
+
+const rect=canvas.getBoundingClientRect()
+
+player.x=e.clientX-rect.left-player.size/2
+
+})
 
 function game(){
- ctx.clearRect(0,0,400,300);
- if(running){
-  ctx.fillStyle="#ff4da6";
-  ctx.fillRect(player.x,player.y,player.size,player.size);
-  ctx.fillStyle="red";
-  ctx.fillRect(enemy.x,enemy.y,enemy.size,enemy.size);
-  enemy.y+=3;
-  if(enemy.y>300){enemy.y=0;enemy.x=Math.random()*380;score++;}
-  if(enemy.y+enemy.size>player.y && enemy.x<player.x+player.size && enemy.x+enemy.size>player.x){alert("Game Over! Score:"+score);score=0;enemy.y=0;}
- }
- ctx.fillStyle="white";
- ctx.fillText("Score: "+score,10,20);
- requestAnimationFrame(game);
-}
-game();
 
-/* AI */
-function aiReply(msg){
- msg=msg.toLowerCase();
- if(msg.includes('fluorite')) return 'FLUORITE453はYouTubeやScratchで活動するクリエイター！';
- if(msg.includes('youtube')) return 'YouTubeはこちら → https://www.youtube.com/@FLUORITE453';
- if(msg.includes('scratch')) return 'Scratch作品はこちら → https://scratch.mit.edu/users/FLUORITE453/';
- if(msg.includes('ゲーム')) return 'このサイトにはミニゲームとScratchゲームがあるよ！';
- if(msg.includes('ai')) return 'このサイトにはAIチャットが搭載されています！';
- if(msg.includes('こんにちは')||msg.includes('hello')) return 'こんにちは！FLUORITE453サイトAIです！';
- if(msg.includes('だれ')) return '私はこのサイトのAIアシスタントです。';
- return 'なるほど！サイトをいろいろ見てみてね 🚀';
+ctx.clearRect(0,0,400,300)
+
+if(running){
+
+ctx.fillStyle="#ff4da6"
+ctx.fillRect(player.x,player.y,player.size,player.size)
+
+ctx.fillStyle="red"
+ctx.fillRect(enemy.x,enemy.y,enemy.size,enemy.size)
+
+enemy.y+=3
+
+if(enemy.y>300){
+
+enemy.y=0
+enemy.x=Math.random()*380
+score++
+
 }
 
-function sendChat(){
- const input=document.getElementById('chatInput');
- const box=document.getElementById('chatBox');
- const user=input.value.trim();
- if(!user) return;
- box.innerHTML+=`<div>🧑 ${user}</div>`;
- box.innerHTML+=`<div>🤖 ${aiReply(user)}</div>`;
- box.scrollTop=box.scrollHeight;
- input.value='';
+if(enemy.y+enemy.size>player.y && enemy.x<player.x+player.size && enemy.x+enemy.size>player.x){
+
+alert("Game Over! Score:"+score)
+
+score=0
+enemy.y=0
+
 }
+
+}
+
+ctx.fillStyle="white"
+ctx.fillText("Score: "+score,10,20)
+
+requestAnimationFrame(game)
+
+}
+
+game()
+
 </script>
 
 </body>
