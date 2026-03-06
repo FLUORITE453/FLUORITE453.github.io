@@ -31,6 +31,9 @@ footer{text-align:center;padding:30px;color:#aaa}
 50%{opacity:0.2}
 100%{opacity:1}
 }
+50%{opacity:0.2}
+100%{opacity:1}
+}
 
 /* cosmic background */
 canvas#stars{position:fixed;inset:0;z-index:-2}
@@ -103,9 +106,12 @@ FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイ�
 
 <section id="videos" class="fade">
 <h2>YouTube Live</h2>
-<p style="text-align:center">ライブ配信をしているときはここに表示されます</p>
+<p style="text-align:center">配信中のときだけLIVE表示されます</p>
+<div style="text-align:center;margin-bottom:10px">
+<span id="liveBadge" class="liveBadge" style="display:none">🔴 LIVE NOW</span>
+</div>
 <div class="video">
-<iframe src="https://www.youtube.com/embed/live_stream?channel=UCOjCRa4AA9NktD0jGZpG6Qg" allowfullscreen></iframe>
+<iframe id="liveFrame" src="https://www.youtube.com/embed/live_stream?channel=UCOjCRa4AA9NktD0jGZpG6Qg" allowfullscreen></iframe>
 </div>
 </section>
 
@@ -163,7 +169,27 @@ FLUORITE453は、YouTube・Scratch・SNSなどで活動しているクリエイ�
 © 2026 FLUORITE453
 </footer>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+/* check youtube live status */
+async function checkLive(){
+ try{
+  const res=await fetch('https://www.youtube.com/feeds/videos.xml?channel_id=UCOjCRa4AA9NktD0jGZpG6Qg');
+  const txt=await res.text();
+  const live=txt.includes('yt:liveBroadcastContent>live<');
+  const badge=document.getElementById('liveBadge');
+  if(live){
+   badge.style.display='inline-block';
+   badge.style.animation='blink 1s infinite';
+  }else{
+   badge.style.display='none';
+  }
+ }catch(e){console.log('live check error',e)}
+}
+
+setInterval(checkLive,60000);
+checkLive();
+
+</script>
 
 <script>
 window.onload=()=>{document.getElementById('loader').style.display='none'}
